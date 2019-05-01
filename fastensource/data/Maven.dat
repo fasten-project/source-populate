@@ -1,0 +1,5 @@
+org.mockito:mockito-core
+org.hibernate:hibernate-entitymanager
+org.elasticsearch:elasticsearch
+org.mockito:mockito-all
+org.google.guava:guava
