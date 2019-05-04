@@ -34,7 +34,7 @@ fastensource {python,java,c} [-h] [-p PROJECTS] [-o OUTPUT] [-v VERSIONS]
 
 The next table describes the options and their default values.
 
-| Option         | Shortcut | Default Values    | Description                   |
+| Option         | Shortcut | Default Value     | Description                   |
 |----------------|----------|-------------------|-------------------------------|
 | help           | -h       |                   | show help message             |
 | projects       | -p       | FASTEN projects   | csv with projects to download |
