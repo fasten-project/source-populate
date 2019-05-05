@@ -1,9 +1,8 @@
 import sys
-import requests
 from subprocess import Popen, PIPE
 from datetime import datetime
 from shutil import which
-
+import requests
 
 def get_libio_datetime(dt):
     dt = dt[:dt.find(',')][:-2] + dt[dt.find(','):]
@@ -159,9 +158,6 @@ def delay(fn):
 
 class Error(Exception):
     """Base class for other exceptions"""
-    pass
-
 
 class ConnectionError(Error):
     """Raised when a connection error occurred"""
-    pass
