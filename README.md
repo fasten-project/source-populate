@@ -2,6 +2,8 @@
 
 fastensource is a tool for downloading projects sources
 from **Maven**, **PyPI**, and **apt**.
+The initial design of tool has been described in
+the project's Deliverable 21: "Code Sourcing Process".
 
 ## Getting Started
 
@@ -32,7 +34,7 @@ fastensource {python,java,c} [-h] [-p PROJECTS] [-o OUTPUT] [-v VERSIONS]
 
 ```
 
-The next table describes the options and their default values.
+The following table describes the tool's options and their default values.
 
 | Option         | Shortcut | Default Value     | Description                   |
 |----------------|----------|-------------------|-------------------------------|
@@ -93,7 +95,7 @@ of their dependencies. The format of the corresponding csv is:
 
 fastensource works only with Python 3.
 We have test fastensource in __Debian__ and __Mac OSX__.
-For downloading projects from a package manager, you should have
-the specific package manager installed.
+For downloading projects from a specific package manager,
+you should have this package manager installed locally.
 In __C__ mode, you should also have
 [UDD](https://wiki.debian.org/UltimateDebianDatabase/) installed.
