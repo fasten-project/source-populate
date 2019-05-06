@@ -69,8 +69,23 @@ def find_version_timestamp_pypi(package, version, delay):
 
 
 @delay
+def find_last_version_pypi(package, delay):
+    """Return the last version of a package
+    """
+    url = 'https://pypi.org/project/{}/#history'.format(package)
+    page = requests_get_handler(url)
+    if page.status_code == 404:
+        print('{} not found'.format(package))
+        return ""
+    elements = pypi_parser(page.content)
+    return elements[0][0]
+
+
+@delay
 def find_version_timestamp_maven(package, version, delay):
     """Return version timestamp using mvnrepository.com.
+
+    In case of error return empty string
     """
     url = 'https://mvnrepository.com/artifact/{}/{}/{}'.format(
          package.split(':')[0], package.split(':')[1], version
@@ -87,3 +102,22 @@ def find_version_timestamp_maven(package, version, delay):
             return elements[i+1].split('(')[1].split(')')[0]
     print('{} of {} not found'.format(version, package))
     return ""
+
+
+@delay
+def find_last_version_maven(package, delay):
+    """Return the last version of a package
+
+    In case of error return empty string
+    """
+    url = 'https://mvnrepository.com/artifact/'
+    url = url + package.split(':')[0] + '/' + package.split(':')[1]
+    page = requests_get_handler(url)
+    if page.status_code == 404:
+        return ''
+    tree = html.fromstring(page.content)
+    element = '//a[@class="vbtn release"]//text()'
+    elements = tree.xpath(element)
+    if len(elements) == 0:
+        return ""
+    return elements[0]
