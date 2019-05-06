@@ -1,6 +1,5 @@
 import psycopg2
 
-
 def find_version_timestamp_udd(package, version, dbname='udd',
                                uname='schaliasos', passwd='udd'):
     """Find the release timestamp of a debian project

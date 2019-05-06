@@ -44,7 +44,6 @@ class Command(ABC):
     @abstractmethod
     def _set_package_manager(self):
         """Make sure that the package manager is declared."""
-        pass
 
     def err(self, error):
         """Method to log erros.
@@ -94,7 +93,7 @@ class Command(ABC):
 
         """
         for project, versions in self.versions.items():
-            for version,_ in versions.items():
+            for version, _ in versions.items():
                 self.d_projects.add(tuple([project, version]))
 
     def _parse_args(self, args):
@@ -169,7 +168,6 @@ class Command(ABC):
             timestamp (str): release timestamp (e.g. Apr 05, 2019)
 
         """
-        pass
 
     def _find_downloaded_projects(self):
         """Find the downloaded projects in the current directory.
@@ -242,7 +240,6 @@ class Command(ABC):
             version (str): Project version
 
         """
-        pass
 
     def _execute(self):
         """Download the chosen projects.
